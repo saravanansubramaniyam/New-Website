@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Live Audio/Video Stream</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@3.4.0/dist/tailwind.min.css" rel="stylesheet" />
+  
+  <!-- Video.js CSS -->
+  <link href="https://vjs.zencdn.net/8.20.0/video-js.css" rel="stylesheet" />
+
+  <style>
+    /* Custom styling for Video.js player container */
+    .video-js {
+      width: 100%;
+      max-width: 640px;
+      height: 360px;
+      margin: auto;
+    }
+  </style>
+</head>
+<body class="bg-gray-50 min-h-screen flex flex-col">
+
+  <!-- Header -->
+  <header class="bg-indigo-700 text-white p-4 shadow-md">
+    <div class="container mx-auto flex justify-between items-center px-6">
+      <h1 class="text-2xl font-bold">Tirupathi Live Stream</h1>
+      <nav>
+        <a href="#" class="text-indigo-300 hover:text-white px-3">Home</a>
+        <a href="#" class="text-indigo-300 hover:text-white px-3">About</a>
+        <a href="#" class="text-indigo-300 hover:text-white px-3">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Main Content: Video Player -->
+  <main class="flex-grow flex flex-col items-center justify-center py-12 px-4">
+    <div class="bg-white rounded-lg shadow-lg p-6 max-w-lg w-full text-center">
+      <h2 class="text-xl font-semibold mb-4">Live Audio/Video Stream</h2>
+      <video
+        id="my-video"
+        class="video-js vjs-default-skin"
+        controls
+        preload="auto"
+        data-setup='{}'
+        >
+        <!-- Replace the src with your stream URL (ideally HLS) -->
+        <source src="http://10.200.2.205/Tirupathi" type="application/x-mpegURL" />
+        Your browser does not support the video tag.
+      </video>
+      <p class="mt-4 text-gray-600 text-sm">
+        Note: MMS streams are not supported in browsers. Please use a compatible player like VLC or convert to HLS.
+      </p>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-indigo-700 text-white py-4 mt-auto">
+    <div class="container mx-auto px-6 flex flex-col md:flex-row justify-between items-center">
+      <span>© 2025 Tirupathi Streaming</span>
+      <ul class="flex gap-6 mt-2 md:mt-0">
+        <li><a href="#" class="hover:underline">Privacy Policy</a></li>
+        <li><a href="#" class="hover:underline">Terms of Service</a></li>
+        <li><a href="#" class="hover:underline">Help</a></li>
+      </ul>
+    </div>
+  </footer>
+
+  <!-- Video.js JS -->
+  <script src="https://vjs.zencdn.net/8.20.0/video.min.js"></script>
+</body>
+</html>
